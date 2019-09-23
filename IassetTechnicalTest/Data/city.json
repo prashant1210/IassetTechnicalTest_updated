@@ -1,0 +1,32 @@
+[
+    {
+    "id": 2158177,
+    "name": "Melbourne",
+    "country": "AU",
+    "coord": {
+      "lon": 144.963318,
+      "lat": -37.813999
+    }
+  },
+
+
+  {
+    "id": 7839562,
+    "name": "Brisbane",
+    "country": "AU",
+    "coord": {
+      "lon": 153.029938,
+      "lat": -27.44573
+    }
+  },
+  {
+    "id": 2063523,
+    "name": "Perth",
+    "country": "AU",
+    "coord": {
+      "lon": 115.833328,
+      "lat": -31.933331
+    }
+  }
+
+]

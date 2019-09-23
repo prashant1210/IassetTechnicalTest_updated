@@ -1,0 +1,111 @@
+<div class="container">
+    <br>
+    <h3>Weather Details</h3>
+    <hr>
+    <br>
+    <div class="row">
+        <div class="col-md-2">
+            <label>Country </label>
+        </div>
+        <div class="col-md-6">
+
+            <select name="Country" [(ngModel)]="country" (change)="BindCity($event.target.value)" class="form-control">
+                <option value="undefined">Select Country Name</option>
+                <option *ngFor="let country of country_List" [value]="country.CountryCode">
+                    {{country.CountryName}}
+                </option>
+            </select>
+
+
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-2">
+            <label>City</label>
+        </div>
+        <div class="col-md-6">
+            <select name="City" [(ngModel)]="city" (change)="ChangedCity($event.target.value)" class="form-control">
+                <option value="undefined">Select City Name</option>
+                <option *ngFor="let city of cityList" [value]="city.CityId">
+                    {{city.CityName}}
+                </option>
+            </select>
+        </div>
+    </div>
+
+
+
+    <div class="row">
+        <div class="col-md-12">
+            <button (click)="GetWeather()" class="btn btn-primary">Submit </button>
+        </div>
+
+    </div>
+    <div class="row" *ngIf="showWeather">
+        <div class="col-sm-6">
+            <table class="table table-bordered table-striped table-sm">
+                <tbody>
+                    <tr>
+                        <th>DewPoint</th>
+                        <td colspan="4">{{weather?.DewPoint}}</td>
+                    </tr>
+                    <tr>
+                        <th>Location</th>
+                        <td colspan="4">{{weather?.Location}}</td>
+                    </tr>
+                    <tr>
+                        <th>Pressure</th>
+                        <td colspan="4">{{weather?.Pressure}}</td>
+                    </tr>
+                    <tr>
+                        <th>RelativeHumidity</th>
+                        <td colspan="4">{{weather?.RelativeHumidity}}</td>
+                    </tr>
+                    <tr>
+                        <th>SkyConditions</th>
+                        <td colspan="4">{{weather?.SkyConditions}}</td>
+                    </tr>
+                    <tr>
+                        <th>RelativeHumidity</th>
+                        <td colspan="4">{{weather?.RelativeHumidity}}</td>
+                    </tr>
+
+                    <tr>
+                        <th> Temperature Min</th>
+                        <td>{{weather?.Temperature.Min}}</td>
+                    </tr>
+                    <tr>
+                        <th> Temperature Max</th>
+                        <td>{{weather?.Temperature.Max}}</td>
+                    </tr>
+                    <tr>
+                        <th>Time</th>
+                        <td>{{weather?.Time}}</td>
+                    </tr>
+                    <tr>
+                        <th>Win Sepeed</th>
+                        <td>{{weather?.Wind.Sepeed}}</td>
+                    </tr>
+                    <tr>
+                        <th>Win Deg</th>
+                        <td>{{weather?.Wind.Deg}}</td>
+                    </tr>
+                    <tr>
+                        <th>Visibility</th>
+                        <td>{{weather?.Visibility}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+
+    <div *ngIf="showError" class="Error_cls">
+        Some Error Has Occured !!!
+    </div>
+
+
+</div>
